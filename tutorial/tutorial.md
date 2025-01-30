@@ -27,20 +27,20 @@ An ackermann AMR is an autonomous mobile robot that steers and drives like a car
 
 The first step to develop a real-world AMR is to model one in CAD.
 
-#### 1.1.1 Open the OnShape ackermann AMR Template
+#### 1.1.1 Open the Onshape ackermann AMR Template
 
-Open the OnShape <a href="https://cad.onshape.com/documents/836767cd08a2800e8a9d4cb0/w/91eb0ff38b3ab8b03ea0db77/e/9015511e4d7c44d4d48e3cf2?renderMode=0&uiState=65bd4308b58f851a1d4b4096" target="_blank">ackermann AMR template</a>
+Open the Onshape <a href="https://cad.onshape.com/documents/836767cd08a2800e8a9d4cb0/w/91eb0ff38b3ab8b03ea0db77/e/9015511e4d7c44d4d48e3cf2?renderMode=0&uiState=65bd4308b58f851a1d4b4096" target="_blank">ackermann AMR template</a>
 
 <figure style="text-align: center;">
     <img src="Images/OnShapeTemplate.png" alt="ackermann AMR Template" width="800"/>
     <figcaption>Onshape Ackermann AMR Template</figcaption>
 </figure>
 
-The ackermann AMR template makes this easy; if you wanted to customize the template, you would just enter your car's measurements into the parameter table and then import the model into Omniverse. If you are working with the a traxxas slash-based vehicle such as the F1Tenth platform you do not need to change anything because it already matches your suspension geometry!
+The ackermann AMR template makes this easy; if you wanted to customize the template, you would just enter your car's measurements into the parameter table and then import the model into Omniverse. If you are working with a Traxxas slash-based vehicle such as the F1Tenth platform you do not need to change anything because it already matches your suspension geometry!
 
 ### 1.2 The ackermann AMR Template USD Pipeline
 
-The Ackermann AMR template has been imported directly into Omniverse with the OnShape Importer extension. The resulting USD file has geometry and basic joint definitions, but is far from ready to simulate. This section demonstrates a powerful USD pipeline that will automatically prepare an imported ackerman AMR template model for simulation.
+The Ackermann AMR template has been imported directly into Omniverse with the Onshape Importer extension. The resulting USD file has geometry and basic joint definitions, but is far from ready to simulate. This section demonstrates a powerful USD pipeline that will automatically prepare an imported ackerman AMR template model for simulation.
 
 #### 1.2.1 Open Isaac Sim
 
@@ -53,7 +53,7 @@ Open Isaac Sim, making sure that under `ROS Bridge Extension`, `omni.isaac.ros2_
 
 #### 1.2.2 Open the Fully Rigged Vehicle
 
-Go to the content browser tab at the bottom of the screen and enter `/home/nvidia/source/sample-ackermann-amr/assets/` into its address bar where *nvidia* should be replaced with your logged in username. This will open a folder with a number of useful assets for this tutorial. Double click on the *F1Tenth.usd* file to open it.
+Go to the content browser tab at the bottom of the screen and enter `/home/nvidia/source/sample-ackermann-amr/assets/` into its address bar where *nvidia* should be replaced with your logged-in username. This will open a folder with a number of useful assets for this tutorial. Double-click on the *F1Tenth.usd* file to open it.
 
 <figure style="text-align: center;">
   <img src="Images/Open_F1Tenth.gif" alt="Open F1Tenth.usd" width="800"/>
@@ -70,11 +70,11 @@ Press the `play` button to see the car simulate. `Shift+click` on the car and th
   <figcaption>Simulate the Working Vehicle</figcaption>
 </figure>
 
-> **_NOTE_**: If at any time you edit this asset, it may not work properly. If your edits show up as deltas in the `Root Layer` in the Layer pane, this layer is intentionally left empty for this very reason; you can delete any deltas in that layer. If that doesn't work, just re-open `F1Tenth.usd` and do not save your changes. Accidently saved your changes? Check out the appendix at the end to see how to reset your files.
+> **_NOTE_**: If at any time you edit this asset, it may not work properly. If your edits show up as deltas in the `Root Layer` in the Layer pane, this layer is intentionally left empty for this very reason; you can delete any deltas in that layer. If that doesn't work, just re-open `F1Tenth.usd` and do not save your changes. Accidentally saved your changes? Check out the appendix at the end to see how to reset your files.
 
 #### 1.2.4 Mute All Layers
 
-Open the Layer tab and mute each layer by clicking on the `eye` icon until the car disapears completely.
+Open the Layer tab and mute each layer by clicking on the `eye` icon until the car disappears completely.
 
 <figure style="text-align: center;">
     <img src="Images/Mute_Layers.gif" alt="Mute All Layers in F1Tenth.usd" width="800"/>    
@@ -96,7 +96,7 @@ Select `Full_Car_base.usd` and press the `F` key to fit the robot to the screen.
     <figcaption>Unmute Full_Car_Base.usd</figcaption>
 </figure>
 
-This layer is created by the OnShape import and is the base of the asset. Press the `play` button to start a simulation, you will notice that the car simply falls, has incorrect joint rigging and quite a few errors. Press the `stop` button to reset the simulation.
+This layer is created by the Onshape import and is the base of the asset. Press the `play` button to start a simulation, you will notice that the car simply falls, has incorrect joint rigging and quite a few errors. Press the `stop` button to reset the simulation.
 
 #### 1.2.6 Unmute Reparenting.usd, Mass_Properties.usd and Joint_Rigging.usd fff
 
@@ -159,7 +159,7 @@ This layer behaves as a macro that adds the two action graphs to the stage tree 
 
 ### 1.4 Create a USD Scene of a Race Track
 
-Now that the car is ready for physics simulation, we will create a scene with a race track and add the car to it.
+Now that the car is ready for physics simulation, we will create a scene with a racetrack and add the car to it.
 
 #### 1.4.1 `Open Raceing_Grid_Start.usd`
 
@@ -181,7 +181,7 @@ To add the car to the scene, drag the `F1Tenth_ROS.usd` asset from the content b
 
 #### 1.4.3 Rotate the Robot 90 degrees
 
-Click on the `F1Tenth_ROS` prim in the stage tree and in the properties pane, set it's `Z` rotation to `-90`. 
+Click on the `F1Tenth_ROS` prim in the stage tree and in the properties' pane, set it's `Z` rotation to `-90`. 
 
 <figure style="text-align: center;">
     <img src="Images/Rotate_Car.gif" alt="Rotate the Car -90 degrees about the Z-axis" width="800"/>    
@@ -203,7 +203,7 @@ You can press `play` to start the physics simulation. Press `stop` to reset the 
 
 Next we will write a ROS 2 node in python that can manually control the robot. 
 
-> **_NOTE_**: If you are new to python, the indentation of your code is critical! Your code will not work correctly if it is not indented correctly because the indentation defines the scope. The Comment for each line of code you will insert is indented correctly, so if you copy-paste the code from this tutorial, align it with the matching comments in the source files, and double check the indentation is the same there as it is in this tutorial, your indentation should be correct.
+> **_NOTE_**: If you are new to python, the indentation of your code is critical! Your code will not work correctly if it is not indented correctly because the indentation defines the scope. The Comment for each line of code you will insert is indented correctly, so if you copy-paste the code from this tutorial, align it with the matching comments in the source files, and double-check the indentation is the same there as it is in this tutorial, your indentation should be correct.
 
 #### 1.5.1 Open the `sample-ackermann-amr` Folder in Visual Studio Code
 
@@ -211,7 +211,7 @@ In a terminal run the following commands to change to the sample-ackermann-amr d
 
 ```bash
 cd ~/source/sample-ackermann-amr/
-code .code
+code .
 ```
 
 <figure style="text-align: center;">
@@ -408,7 +408,7 @@ viewport = get_active_viewport()
 capture_viewport_to_file(viewport, file_path=file_path)
 ```
 
-When you click on the `Capture` button, it calls the `OnCapture` function. `OnCapture` calls `capture_image` asynchrounously which in turn calls `replace_image`. 
+When you click on the `Capture` button, it calls the `OnCapture` function. `OnCapture` calls `capture_image` asynchronously which in turn calls `replace_image`. 
 
 #### 2.1.3 Update the UI Thumbnail Image
 
@@ -786,19 +786,19 @@ def build_ui(self):
 
 </details>
 
-### 2.2 The Pytorch Model used to Train and Drive the AMR
+### 2.2 The PyTorch Model used to Train and Drive the AMR
 
 With a clear user interface that allows the user to navigate the training workflow, the next step in the extension development is to implement an AI model with its training and evaluation functions.
 
 #### 2.2.1 Open `ackermann_amr_policy_start.py`
 
-Open `ackermann_amr_policy_start.py` in the `exts/omni.sample.ackermann_amr_trainer/omni/sample/ackermann_amr_trainer`folder. This class defines the nature of the AI model. In this case we are using a very typical fully-connected model based off of resnet18. If you would like to learn more detail on how neural networks work; I highly reccomend the Deep Learning Institute's [*Getting Started With Deep Learning*](https://courses.nvidia.com/courses/course-v1:DLI+S-FX-01+V1/). Here are the main components of the AI policy:
+Open `ackermann_amr_policy_start.py` in the `exts/omni.sample.ackermann_amr_trainer/omni/sample/ackermann_amr_trainer`folder. This class defines the nature of the AI model. In this case we are using a very typical fully-connected model based off of resnet18. If you would like to learn more detail on how neural networks work; I highly recommend the Deep Learning Institute's [*Getting Started With Deep Learning*](https://courses.nvidia.com/courses/course-v1:DLI+S-FX-01+V1/). Here are the main components of the AI policy:
 
 1. Its base model
 2. How the layers are connected
 3. How the nodes are activated 
 4. How the images are processed
-5. How forward propogation is performed
+5. How forward propagation is performed
 
 #### 2.2.2 Add Image Processing Transform
 
@@ -925,7 +925,7 @@ def Add_Item(self, row, col, width, height, file_path):
 
 Finally, `ackermann_amr_model` trains and evaluates an AI model that can drive an AMR.
 
-#### 2.2.6  Load Training Data in the `train` function
+#### 2.2.6 Load Training Data in the `train` function
 
 Add the following code to the `train` function to load the annotated data set: 
 
@@ -938,7 +938,7 @@ Now that the data is loaded, the training loop will train the model correctly.
 
 #### 2.2.7 Load Viewport Capture to GPU
 
-Add the following code to the `evaluate` function to convert the captured viewport buffer to an image compatible with pytorch and add it to the GPU: 
+Add the following code to the `evaluate` function to convert the captured viewport buffer to an image compatible with PyTorch and add it to the GPU: 
 
 ```python
 # 2.2.7 Load the viewport capture from buffer and add it to the GPU
@@ -1121,11 +1121,11 @@ Click the `Evaluate` button to turn on model evaluation; click it again to turn 
 
 ## 3 Create a ROS 2 Node to Automatically Control the Car
 
-With a trained model that, in theory, can control the car, the next step is to deploy the model to a ROS node that actually controlls the robot. 
+With a trained model that, in theory, can control the car, the next step is to deploy the model to a ROS node that actually controls the robot. 
 
 ### 3.1 Open `model_evaluate_start.py`
 
-Open `ros2_f1_tenth_trainer/model_evaluate_start.py`. When this class is initialized it loads the model the user trained and saved. It then subscribes to viewport images published by Isaac Sim and uses those to predict where it think a user would click on that image. In this section we will respond to that prediction. 
+Open `ros2_f1_tenth_trainer/model_evaluate_start.py`. When this class is initialized it loads the model the user trained and saved. It then subscribes to viewport images published by Isaac Sim and uses those to predict where it thinks a user would click on that image. In this section we will respond to that prediction. 
 
 ### 3.2 Compute Steering Angle
 
@@ -1151,7 +1151,7 @@ Here we use the dot product of the forward vector and the vector from the bottom
     <figcaption>Steering Angle Schematic</figcaption>
 </figure>
 
-> **_Tip_**  Notice that in the last line a few adjustments to the steering angle are made. the value is reduced by half and biased by fifteen degrees. These correction factors will be a key to your success in making this car drive faster! Because the track we trained with only has left-hand turns, the model is biased towards the left. We have introduced a reverse-bias to help the vehicle go stright and turn right when needed. You might be able to find a better bias value! Also, we found the car made large turns it sometimes could not recover from so we divided all angles by a scaling factor to help the car drive more smoothly. Once again, you may be able to find a better value for this correction factor.
+> **_Tip_**  Notice that in the last line a few adjustments to the steering angle are made. The value is reduced by half and biased by fifteen degrees. These correction factors will be a key to your success in making this car drive faster! Because the track we trained with only has left-hand turns, the model is biased towards the left. We have introduced a reverse-bias to help the vehicle go straight and turn right when needed. You might be able to find a better bias value! Also, we found the car made large turns it sometimes could not recover from, so we divided all angles by a scaling factor to help the car drive more smoothly. Once again, you may be able to find a better value for this correction factor.
 
 ### 3.3 Create and Send ROS Message
 
@@ -1225,7 +1225,7 @@ def image_callback(self, msg):
 
 ### 3.4 Run the Model
 
-To run the model replace `road_following_model.pth` with a model you have trained and enter the following command from the `ros2_f1_tenth_trainer` directory and start the omniverse simulation. 
+To run the model replace `road_following_model.pth` with a model you have trained and enter the following command from the `ros2_f1_tenth_trainer` directory and start the Omniverse simulation. 
 
 ```bash
 python3 model_evaluate_start.py
@@ -1246,11 +1246,11 @@ Open Omniverse and click the `play` icon or press the `spacebar` to start the si
 
 ## Conclusions
 
-Take a moment to reflect on what you have just done; you have taken an ackermann AMR from mere concept to driving around a virtual track under its own intelligence. You have done it with ROS so you can deploy this synthetically trained model to a real robot. Great job!
+Take a moment to reflect on what you have just done; you have taken an ackermann AMR from mere concept to driving around a virtual track under its own intelligence. You have done it with ROS, so you can deploy this synthetically trained model to a real robot. Great job!
 
 ## Appendix: How to Revert Changes You Have Made to this Repository
 
-If you have made a change to a file and now the project isn't working and you are not sure what to do; feel free to simply revert back to the original state of this repository. 
+If you have made a change to a file and now the project isn't working, and you are not sure what to do; feel free to simply revert to the original state of this repository. 
 
 Open your terminal and enter this command to navigate to the git repository: 
 
